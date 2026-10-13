@@ -1,12 +1,22 @@
-function Greeting(props) {
-    return <h1>Hello, {props.name}! You are {props.age} years old.</h1>;
-}
+import {useState} from 'react';
 
 function App() {
+    const [count, setCount] = useState(0);
+
+    function handleIncrease() {
+        setCount(count + 1);
+    }
+
+    function handleDecrease() {
+        setCount(count - 1);
+    }
+
     return (
         <div>
-            <Greeting name="Ali" age={25} />
-            <Greeting name="Ahmed" age={30} />
+            <h1>My Counter</h1>
+            <p>Count: {count}</p>
+            <button onClick={handleIncrease}>Increase</button>
+            <button onClick={handleDecrease}>Decrease</button>
         </div>
     );
 }
