@@ -1,11 +1,12 @@
+function Greeting(props) {
+    return <h1>Hello, {props.name}! You are {props.age} years old.</h1>;
+}
+
 function App() {
     return (
         <div>
-            <h2>Enter your name</h2>
-            <input
-                type="text"
-                placeholder="Enter your name"
-            />
+            <Greeting name="Ali" age={25} />
+            <Greeting name="Ahmed" age={30} />
         </div>
     );
 }
